@@ -1,0 +1,492 @@
+﻿//QuestBook Log File
+player{
+name=Filip Šikula
+quest{
+img=IconCamera.png
+title=Defeated by OV7670
+score=-38
+rank=none
+}
+quest{
+img=IconHttp.png
+title=QuestBook Gateway
+score=15
+rank=none
+}
+quest{
+img=IconTrophy.png
+title=1st place on perFEKT
+score=30
+rank=none
+}
+quest{
+img=IconMegaphone.png
+title=Fair of High schools
+score=20
+rank=none
+}
+quest{
+img=IconNotepad.png
+title=Writer
+score=10
+rank=none
+}
+quest{
+img=IconApproved.png
+title=Certificate Creator
+score=5
+rank=none
+}
+quest{
+img=IconMicrophone.png
+title=A Tale of Čichnovka
+score=10
+rank=none
+}
+quest{
+img=IconClock.png
+title=Time Unit: Fabian
+score=15
+rank=none
+}
+quest{
+img=IconMTG.png
+title=Five Colors Of Mana
+score=10
+rank=none
+}
+quest{
+img=IconScroll.png
+title=Quest Scrollbar
+score=10
+rank=none
+}
+quest{
+img=IconTable.png
+title=Dynamic QuestBook
+score=20
+rank=none
+}
+quest{
+img=IconRocket.png
+title=Launch QuestBook
+score=50
+rank=none
+}
+};
+
+player{
+name=Vüjta Pavlů
+quest{
+img=IconReddit.png
+title=Reddit User
+score=10
+rank=none
+}
+quest{
+img=IconMoustacheSir.png
+title=Moustaches
+score=20
+rank=Bronze
+}
+quest{
+img=IconTent.png
+title=Sleepyhead
+score=-10
+rank=none
+}
+quest{
+img=IconMicrophone.png
+title=A Tale of Čichnovka
+score=10
+rank=none
+}
+quest{
+img=IconFilm.png
+title=Showtime
+score=15
+rank=none
+}
+quest{
+img=IconMTG.png
+title=Five Colors Of Mana
+score=10
+rank=none
+}
+quest{
+img=IconGear.png
+title=QuestBook Tester
+score=10
+rank=none
+}
+quest{
+img=IconSound.png
+title=Move With Style
+score=50
+rank=Bronze
+}
+quest{
+img=IconShield.png
+title=Exorcist
+score=30
+rank=none
+}
+quest{
+img=IconCoffee.png
+title=Coffee Delivery
+score=15
+rank=Bronze
+}
+};
+
+player{
+name=Ondřej Vybíral
+quest{
+img=IconTrophy.png
+title=1st place on perFEKT
+score=30
+rank=none
+}
+quest{
+img=IconMustache.png
+title=Moustache toy
+score=15
+rank=none
+}
+quest{
+img=IconApproved.png
+title=Certificated
+score=-10
+rank=none
+}
+quest{
+img=IconCircles.png
+title=Ambiguity Master
+score=10
+rank=none
+}
+quest{
+img=IconMicrophone.png
+title=A Tale of Čichnovka
+score=10
+rank=none
+}
+quest{
+img=IconTime.png
+title=Time Management
+score=10
+rank=none
+}
+quest{
+img=IconGear.png
+title=QuestBook Tester
+score=10
+rank=none
+}
+quest{
+img=IconTeam.png
+title=Missing In Action
+score=-10
+rank=none
+}
+quest{
+img=IconTent.png
+title=Sleepyhead
+score=-25
+rank=Gold
+}
+quest{
+img=IconMicrosoft.png
+title=MSFest
+score=50
+rank=none
+}
+};
+
+player{
+name=Michal Horák
+quest{
+img=IconTrophy.png
+title=1st place on perFEKT
+score=30
+rank=none
+}
+quest{
+img=IconMegaphone.png
+title=Fair of High schools
+score=20
+rank=none
+}
+quest{
+img=IconList.png
+title=PizzaJimm Website
+score=20
+rank=none
+}
+quest{
+img=IconPresentation.png
+title=Presentation Master
+score=15
+rank=none
+}
+quest{
+img=IconTerminal.png
+title=Python Beginer
+score=20
+rank=none
+}
+quest{
+img=IconHuman.png
+title=Perfection
+score=30
+rank=none
+}
+};
+
+player{
+name=Štěpán Janás
+quest{
+img=IconAlert.png
+title=H-Bridge Destroyer
+score=-10
+rank=none
+}
+quest{
+img=IconTrophy.png
+title=1st place on perFEKT
+score=30
+rank=none
+}
+quest{
+img=IconMegaphone.png
+title=Fair of High schools
+score=20
+rank=none
+}
+quest{
+img=IconCamera.png
+title=RDP WebCamera
+score=-5
+rank=none
+}
+quest{
+img=IconLinuxTerminal.png
+title=Raspberry Pi Server
+score=15
+rank=none
+}
+quest{
+img=IconDisplay.png
+title=LCD Display Master
+score=20
+rank=none
+}
+quest{
+img=IconCodePageC.png
+title=Bad Code Formating
+score=-10
+rank=none
+}
+quest{
+img=IconPrint.png
+title=Savior
+score=10
+rank=none
+}
+quest{
+img=IconTeacher.png
+title=Awesome Teacher
+score=30
+rank=none
+}
+};
+
+player{
+name=Jirka Višinka
+quest{
+img=IconReddit.png
+title=Reddit User
+score=10
+rank=none
+}
+quest{
+img=IconSuit.png
+title=Manager
+score=20
+rank=none
+}
+quest{
+img=IconTools.png
+title=MERKUR Robot
+score=-20
+rank=none
+}
+quest{
+img=IconClock.png
+title=Time Unit: Fabian
+score=10
+rank=none
+}
+};
+
+player{
+name=Daniel Vjater
+quest{
+img=IconReddit.png
+title=Reddit User
+score=10
+rank=none
+}
+quest{
+img=IconCoffee.png
+title=Coffee Delivery
+score=20
+rank=Bronze
+}
+};
+
+player{
+name=Antonín Všetula
+quest{
+img=IconMicrophone.png
+title=A Tale of Čichnovka
+score=10
+rank=none
+}
+quest{
+img=IconJoker.png
+title=Awesome Troll
+score=10
+rank=none
+}
+quest{
+img=IconHtml.png
+title=HTML Course
+score=30
+rank=none
+}
+};
+
+player{
+name=Štěpán Havlíček
+quest{
+img=IconCastle.png
+title=Castle Defender
+score=10
+rank=none
+}
+quest{
+img=IconMTG.png
+title=Five Colors Of Mana
+score=10
+rank=none
+}
+quest{
+img=IconNotepad.png
+title=Writer of Poets
+score=15
+rank=Bronze
+}
+quest{
+img=IconMedic.png
+title=Medic
+score=30
+rank=none
+}
+};
+
+player{
+name=Martin Kadlček
+quest{
+img=IconReddit.png
+title=Reddit User
+score=10
+rank=none
+}
+quest{
+img=IconTerminal.png
+title=QB API Application
+score=25
+rank=Bronze
+}
+quest{
+img=IconMegaphone.png
+title=Fair of High schools
+score=20
+rank=none
+}
+quest{
+img=IconTablet.png
+title=Low-Tech Survivor
+score=10
+rank=none
+}
+quest{
+img=IconCoffee.png
+title=Coffee Delivery
+score=20
+rank=Silver
+}
+quest{
+img=IconFilm.png
+title=Showtime
+score=10
+rank=none
+}
+};
+
+player{
+name=Zdeněk Jevický
+quest{
+img=IconHtml.png
+title=HTML
+score=15
+rank=none
+}
+quest{
+img=IconMegaphone.png
+title=Fair of High schools
+score=20
+rank=none
+}
+quest{
+img=IconFormspring.png
+title=Confused
+score=-5
+rank=none
+}
+quest{
+img=IconHammer.png
+title=Laptop Engineer
+score=-15
+rank=none
+}
+quest{
+img=IconMoustacheSir.png
+title=Moustaches
+score=20
+rank=Bronze
+}
+quest{
+img=IconGear.png
+title=QuestBook Tester
+score=10
+rank=none
+}
+quest{
+img=IconBlackhole.png
+title=Blackhole
+score=-60
+rank=Bronze
+}
+};
+
+player{
+name=Jaroslav Tihlařík
+quest{
+img=IconFormspring.png
+title=Tihlení
+score=-100
+rank=Gold
+}
+};
