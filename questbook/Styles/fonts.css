@@ -1,0 +1,19 @@
+@font-face {
+    font-family: FontTitle;
+    src: url(../Fonts/eglantine.ttf);
+}
+
+@font-face {
+    font-family: BarText;
+    src: url(../Fonts/raleway.ttf);
+}
+
+@font-face {
+    font-family: ScoreText;
+    src: url(../Fonts/pressstyle.ttf);
+}
+
+@font-face {
+    font-family: APIText;
+    src: url(../Fonts/chintzy.ttf);
+}

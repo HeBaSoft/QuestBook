@@ -1,66 +1,33 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
+		
+		<!--JQuery.js-->
 		<script src="Libraries/jquery-2.0.3.js"></script>
 		<script src="Libraries/jquery.color-2.1.2.js"></script>
+		
+		<!--SideButton.js-->
+		<script src="Libraries/SideButton.js"></script>
+		
+		<!--Scoreboard.js-->
+		<script src="Libraries/Scoreboard.js"></script>
+		
+		<!--QuestScroll.js-->
+		<script src="Libraries/QuestScroll.js"></script>
+		
+		<!--QuestDynamicSize.js-->
+		<script src="Libraries/QuestDynamicSize.js"></script>
+		
+		<!--CSS-->
 		<link rel="stylesheet" type="text/css" href="Styles/api.css"> 
-		<link rel="shortcut icon" href="Pictures/Favicon.ico">
+		<link rel="stylesheet" type="text/css" href="Styles/fonts.css"> 
+
 		<title>QuestBook API</title>
 		
 		<script>
-			//OnDocumentReady
-			$(document).ready(function(){
-				
-				//Gateway API button animation
-				$("#BarLinkQuestBook").mouseenter(function(){
-					var ThisObj = $(this);
-					$(ThisObj).data("timer", setTimeout(function(){
-						$(ThisObj).data("anim", true);
-						$(ThisObj).stop(true, true).animate({
-							width: '+=10px',
-							'line-height': '+=10px',
-							height: '+=10px',
-							color: '#ffcc00'
-						}, 250);
-					}, 100));
-				}).mouseout(function(){
-					clearTimeout($(this).data("timer"));
-					if($(this).data("anim") == true) {
-						$(this).data("anim", false);
-						$(this).stop(true, true).animate({
-							width: '-=10px',
-							'line-height': '-=10px',
-							height: '-=10px',
-							color: '#54504A'
-						}, 95);
-					}
-				});
-				
-				$("#BarLinkGatewayCZ").mouseenter(function(){
-					var ThisObj = $(this);
-					$(ThisObj).data("timer", setTimeout(function(){
-						$(ThisObj).data("anim", true);
-						$(ThisObj).stop(true, true).animate({
-							width: '+=10px',
-							'line-height': '+=10px',
-							height: '+=10px',
-							color: '#ffcc00'
-						}, 250);
-					}, 100));
-				}).mouseout(function(){
-					clearTimeout($(this).data("timer"));
-					if($(this).data("anim") == true) {
-						$(this).data("anim", false);
-						$(this).stop(true, true).animate({
-							width: '-=10px',
-							'line-height': '-=10px',
-							height: '-=10px',
-							color: '#54504A'
-						}, 95);
-					}
-				});
-				
-			});
+			//Initialize SideButton Animation
+			SideButtonAnimateElement("#BarLinkQuestBook");
+			SideButtonAnimateElement("#BarLinkGatewayCZ");
 		</script>
 	</head>
 	<body>
