@@ -70,7 +70,7 @@
 	</head>
 	<body>
 		<div id="BarSideLeft">
-			<a href="https://twitter.com/TheQuestBook"><img src="Pictures/ButtonTwitter.png" id="ButtonTwitter"></a>
+			<a href="https://twitter.com/TheQuestBook" target="_blank" ><img src="Pictures/ButtonTwitter.png" id="ButtonTwitter"></a>
 			<div class="BarTextVersion" style="margin-top: 5px; margin-bottom: 5px;">
 				QuestBook, Version: 0.5b, Last update: 20.1.2015
 			</div>
