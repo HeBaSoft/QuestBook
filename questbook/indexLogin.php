@@ -1,268 +1,50 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
+		
+		<!--JavaScript Global Variables-->
+		<script>
+			var scroll = 0;
+		</script>
+		
+		<!--JQuery.js-->
 		<script src="Libraries/jquery-2.0.3.js"></script>
 		<script src="Libraries/jquery.color-2.1.2.js"></script>
+		
+		<!--SideButton.js-->
+		<script src="Libraries/SideButton.js"></script>
+		
+		<!--Scoreboard.js-->
+		<script src="Libraries/Scoreboard.js"></script>
+		
+		<!--QuestScroll.js-->
+		<script src="Libraries/QuestScroll.js"></script>
+		
+		<!--QuestDynamicSize.js-->
+		<script src="Libraries/QuestDynamicSize.js"></script>
+		
+		<!--CSS-->
 		<link rel="stylesheet" type="text/css" href="Styles/index.css"> 
+		<link rel="stylesheet" type="text/css" href="Styles/fonts.css"> 
+		
+		<!--Favicon-->
 		<link rel="shortcut icon" href="Pictures/Favicon.ico">
+		
 		<title>QuestBook</title>
 		
+		<!--JavaScript-->
 		<script>
-			//Hides quests that shouldn't be drawn
-			//Shows quest scroll-bars when needed
-			function HideOwerflowQuests() {
-				$('.BarPlayerQuest').each(function(i, obj) {
-					$(this).show();
-				});
-				
-				$('.BarPlayerQuestScrollDown').each(function(i, obj) {
-					$(this).hide();
-				});
-				
-				$('.BarPlayerQuestScrollUp').each(function(i, obj) {
-					$(this).hide();
-				});
-			
-				$('.BarPlayer').each(function(i, obj) {
-					var BarPlayerObj = $(this);
-					var QuestObjs = $(this).children().filter(".BarPlayerQuest");
-					var QuestsCountForPage = Math.floor(($(BarPlayerObj).height() - 95 - 40 - 10) / 85);
-					
-					BarPlayerObj.children().filter("#BarPlayerScrollCounter").text("0");
-					
-					if(QuestObjs.size() > QuestsCountForPage) {
-						var objs = $(this).children();
-						objs.filter(".BarPlayerQuestScrollDown").css("top", $(BarPlayerObj).height() - 35);
-						objs.filter(".BarPlayerQuestScrollDown").show();
-						objs.filter(".BarPlayerQuestScrollUp").show();
-						QuestObjs.each(function(i, obj) {
-							if(i > QuestsCountForPage - 1) { $(this).hide(); }
-						});
-					}
-					
-					var ScrollCounterObj = BarPlayerObj.children().filter("#BarPlayerScrollCounter");
-					var ScrollButtonUp = BarPlayerObj.children().filter(".BarPlayerQuestScrollUp");
-					if(ScrollCounterObj.text() != "0") {
-						$(ScrollButtonUp).css("background-color", "#999791");
-						$(ScrollButtonUp).css("color", "black");
-					}else{
-						$(ScrollButtonUp).css("background-color", "#A3A3B1");
-						$(ScrollButtonUp).css("color", "#9797B2");
-					}
-					
-					var ScrollButtonDown = BarPlayerObj.children().filter(".BarPlayerQuestScrollDown");
-					if(parseInt(ScrollCounterObj.text()) <= QuestObjs.size()) {
-						$(ScrollButtonDown).css("background-color", "#999791");
-						$(ScrollButtonDown).css("color", "black");
-					}else{
-						$(ScrollButtonDown).css("background-color", "#A3A3B1");
-						$(ScrollButtonDown).css("color", "#9797B2");
-					}
-				});
-			}
-		
-			//OnWindowResize
-			$( window ).resize(function() {
-				HideOwerflowQuests();
-			});
+			//Initialize SideButton Animation
+			SideButtonAnimateElement("#BarLinkGateWay");
 		
 			//OnDocumentReady
 			$(document).ready(function(){
-				//Gateway API button animation
-				$("#BarLinkGateWay").mouseenter(function(){
-					var ThisObj = $(this);
-					$(ThisObj).data("timer", setTimeout(function(){
-						$(ThisObj).data("anim", true);
-						$(ThisObj).stop(true, true).animate({
-							width: '+=10px',
-							'line-height': '+=10px',
-							height: '+=10px',
-							color: '#ffcc00'
-						}, 250);
-					}, 100));
-				}).mouseout(function(){
-					clearTimeout($(this).data("timer"));
-					if($(this).data("anim") == true) {
-						$(this).data("anim", false);
-						$(this).stop(true, true).animate({
-							width: '-=10px',
-							'line-height': '-=10px',
-							height: '-=10px',
-							color: '#54504A'
-						}, 95);
-					}
-				});
-				
-				//Player scroll function
-				var scroll = 0;
-				$("#ArrowRight").click(function(){
-					if($('.BarPlayer').is(':animated') == false && scroll <= ($('.BarPlayer').length - 4)){
-						$(".BarPlayer").stop().animate({
-							left: '-=330px'
-						},250);
-						scroll++;
-					}
-				});
-				
-				$("#ArrowLeft").click(function(){
-					if($('.BarPlayer').is(':animated') == false && scroll > 0){
-						$(".BarPlayer").stop().animate({
-							left: '+=330px'
-						},250);
-						scroll--;
-					}
-				});
-			
-				//Calculates total score for players, create scoreboard array
-				var scoreIndex = 0;
-				var score = new Array();
-				$('.BarPlayer').each(function(i, obj) {
-					var objs = $(this).children();
-					var totalvalue = 0;
-					objs.filter(".BarPlayerQuest").each(function(i, obj) {
-						$(this).children().filter(".BarPlayerQuestScore").each(function(i, obj) {
-							var text = $(this).text();
-							totalvalue += parseInt(text.substring(0, text.length - 1));
-						});
-					});
-					scoreIndex++;
-					objs.filter(".BarPlayerScore").text(totalvalue);
-					score[scoreIndex] = totalvalue + "p | " + objs.filter(".BarPlayerInfo").children().filter(".BarPlayerInfoName").text();
-				});
-				
 				//Calculates total number of quests for each player
 				$('.BarPlayer').each(function(i, obj) {
 					var objs = $(this).children();
 					objs.filter(".BarPlayerInfo").children().filter(".BarPlayerInfoQuests").text(objs.filter(".BarPlayerQuest").size() + " quests completed");
 				});
-				
-				//Sorting function for scoreboard
-				function SortFunction(a,b) {
-					var aVal = a.substring(0, a.indexOf("|") - 2);
-					var bVal = b.substring(0, b.indexOf("|") - 2);
-					return bVal - aVal;
-				}
-				
-				//Sorts and draws scoreboard
-				score.sort(SortFunction);
-				for(var i = 0; i < scoreIndex; i++){
-					$('#ScoreBoard').append("<p class='ScoreBoardLine'>" + score[i] + "</p><br>");
-				}
-				
-				//Fast scroll using scoreboard
-				$(".ScoreBoardLine").click(function(){
-					var text = $(this).text();
-					var name = text.substr(text.indexOf('|') + 2);
-					var playerObjs = $("body").children().filter(".BarPlayer").children().filter(".BarPlayerInfo").children().filter(".BarPlayerInfoName");
-
-					playerObjs.each(function(i, obj) {
-						if($(this).text() == name){
-							if(i > scroll + 2) {
-								var offset = 0; if(i >= playerObjs.size() - 3) { offset = 2; }
-								for(var s = 0; s < i - scroll - offset; s++){
-									setTimeout(function(){
-										$('#ArrowRight').click();
-									},300 + s * 300);
-								}
-							}else if(i < scroll) {
-								for(var s = 0; s < scroll - i; s++){
-									setTimeout(function(){
-										$('#ArrowLeft').click();
-									},300 + s * 300);
-								}
-							}
-							return(false); //break;
-						}
-					});
-				});
-				
-				//Hides quests that shouldn't be drawn
-				//Shows quest scroll-bars when needed
-				HideOwerflowQuests();
-				
-				//Quest scroll function
-				//ScrollDown
-				$('.BarPlayerQuestScrollDown').click(function(){					
-					var PlayerDiv = $(this).parent();
-					var QuestObjs = PlayerDiv.children().filter(".BarPlayerQuest");
-					var ScrollCounterObj = PlayerDiv.children().filter("#BarPlayerScrollCounter");
-					var QuestsCountForPage = Math.floor(($(PlayerDiv).height() - 95 - 40 - 10) / 85);
-					
-					if(QuestObjs.is(':animated') == false){	
-						var QuestScrollIndex = parseInt(ScrollCounterObj.text());
-						
-						QuestObjs.each(function(i, obj) {
-							if(i > QuestScrollIndex && $(this).is(":visible") == false) {
-								$(this).show("200");
-								QuestObjs.eq(QuestScrollIndex).hide("200");
-								QuestScrollIndex++;
-								return(false); //break;
-							}
-						});
-						ScrollCounterObj.text(QuestScrollIndex);
-						
-						if(QuestScrollIndex > 0) {
-							var ScrollButtonUp = PlayerDiv.children().filter(".BarPlayerQuestScrollUp");
-							$(ScrollButtonUp).css("background-color", "#999791");
-							$(ScrollButtonUp).css("color", "black");
-						}
-						
-						if(QuestsCountForPage + QuestScrollIndex != QuestObjs.size()) {
-							$(this).css("background-color", "#999791");
-							$(this).css("color", "black");
-						} else {
-							$(this).css("background-color", "#A3A3B1");
-							$(this).css("color", "#9797B2");
-						}
-					}
-				});
-				
-				//Quest scroll function
-				//ScrollUp
-				$('.BarPlayerQuestScrollUp').click(function(){
-					var PlayerDiv = $(this).parent();
-					var QuestObjs = PlayerDiv.children().filter(".BarPlayerQuest");
-					var ScrollCounterObj = PlayerDiv.children().filter("#BarPlayerScrollCounter");
-					var QuestsCountForPage = Math.floor(($(PlayerDiv).height() - 95 - 40 - 10) / 85);
-					
-					if(QuestObjs.is(':animated') == false){
-						var QuestScrollIndex = parseInt(ScrollCounterObj.text());
-						if(ScrollCounterObj.text() != "0") {
-							QuestObjs.each(function(i, obj) {
-								if(i > QuestScrollIndex && QuestScrollIndex > 0) {
-									if($(this).is(":visible") == false){
-										QuestObjs.eq(i - 1).hide("200");
-										QuestObjs.eq(QuestScrollIndex - 1).show("200");
-										QuestScrollIndex--;
-										return(false); //break;
-									}else if(i == QuestObjs.size() - 1){
-										QuestObjs.eq(i).hide("200");
-										QuestObjs.eq(QuestScrollIndex - 1).show("200");
-										QuestScrollIndex--;
-										return(false); //break;
-									}
-								}
-							});
-							
-							ScrollCounterObj.text(QuestScrollIndex);
-						}
-						
-						if(QuestScrollIndex > 0) {
-							$(this).css("background-color", "#999791");
-							$(this).css("color", "black");
-						}else{
-							$(this).css("background-color", "#A3A3B1");
-							$(this).css("color", "#9797B2");
-						}
-						
-						if(QuestsCountForPage + QuestScrollIndex != QuestObjs.size()) {
-							var ScrollButtonDown = PlayerDiv.children().filter(".BarPlayerQuestScrollDown");
-							$(ScrollButtonDown).css("background-color", "#999791");
-							$(ScrollButtonDown).css("color", "black");
-						}
-					}
-				});
-				
+			
 				//Color ranked quests
 				$(".BarPlayerQuestRank").each(function(i, obj) {
 					QuestObj = $(this).parent();
@@ -273,20 +55,24 @@
 							$(this).css("color", "#a36e28");
 						break;
 						
+						case "Silver Rank":
+							$(this).css("color", "#DDDDDD");
+						break;
+						
 						case "Gold Rank":
 							$(this).css("color", "#FFEA2D");
 						break;
 					}
 				});
-				
+
 				//Hide/Show login area
-				$("#ButtonLogin").click(function(){
+				$("#ButtonShowLogin").click(function(){
 					if($("#BarLogin").is(':animated') == false){
 						$("#BarLogin").slideToggle();
-						if($("#ButtonLogin").attr("src") == "Pictures/ButtonArrowDown.png") {
-							$("#ButtonLogin").attr("src", "Pictures/ButtonArrowUp.png");
+						if($(this).attr("src") == "Pictures/ButtonArrowDown.png") {
+							$(this).attr("src", "Pictures/ButtonArrowUp.png");
 						} else {
-							$("#ButtonLogin").attr("src", "Pictures/ButtonArrowDown.png");
+							$(this).attr("src", "Pictures/ButtonArrowDown.png");
 						}
 					}
 				});
@@ -311,19 +97,21 @@
 	</head>
 	<body>
 		<div id="BarSideLeft">
+			<!--<a href="https://twitter.com/TheQuestBook"><img src="Pictures/ButtonTwitter.png" id="ButtonTwitter"></a>
+			-->
 			<div class="BarTextVersion" style="margin-top: 5px; margin-bottom: 5px;">
 				Zde mají být informace o verzi, toto je Beta, jsem líný ...
 			</div>
 			
 			<div id="BarLogin">
 				<img src="Pictures/ButtonLogin.png" id="ButtonLogin" style="width: 32px; height:32px; margin: 5px; float: left;">
-				<input type="text" id="LoginUserInput" name="usr">
-				<input type="password" id="LoginPasswordInput" name="pass">
+				<input type="text" id="LoginUserInput" class="InputLogin" name="usr">
+				<input type="password" id="LoginPasswordInput" class="InputLogin" name="pass">
 				<span class="ObjCenter" id="LoggedUser" style="display: none;">Filip Šikula</span>
 			</div>
 			
 			<div id="BarTitle">
-				<img src="Pictures/ButtonArrowDown.png" id="ButtonLogin">
+				<img src="Pictures/ButtonArrowDown.png" id="ButtonShowLogin">
 				<img src="Pictures/QuestBook.png" class="ObjCenter">
 				<div id="Title">QuestBook</div>
 				<br>
@@ -332,7 +120,7 @@
 			<br>
 			
 			<div id="BarLinks">
-				<div id="BarLinkGateWay" onclick="location.href='api.php'">
+				<div class="BarLinkBase" id="BarLinkGateWay" onclick="location.href='api.php'">
 					QuestBook Gateway API
 				</div>
 			</div>
