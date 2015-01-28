@@ -268,6 +268,7 @@ input {
 .ScoreBoardLine{
 	display: inline;
 	color: inherit;
+	cursor: pointer;
 }
 
 .ScoreBoardLine:hover{
