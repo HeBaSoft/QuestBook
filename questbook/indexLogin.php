@@ -104,7 +104,7 @@
 			</div>
 			
 			<div id="BarLogin">
-				<img src="Pictures/ButtonLogin.png" id="ButtonLogin" style="width: 32px; height:32px; margin: 5px; float: left;">
+				<img src="Pictures/ButtonLogin.png" id="ButtonLogin" style="width: 32px; height:32px; margin: 5px; float: left; cursor: pointer;">
 				<input type="text" id="LoginUserInput" class="InputLogin" placeholder="Username" name="usr">
 				<input type="password" id="LoginPasswordInput" class="InputLogin" placeholder="Password" name="pass">
 				<span class="ObjCenter" id="LoggedUser" style="display: none;">Filip Šikula</span>
