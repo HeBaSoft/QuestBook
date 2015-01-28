@@ -80,6 +80,7 @@ input {
 #ButtonShowLogin {
 	margin: 5px;
 	position: fixed;
+	cursor: pointer;
 }
 
 #BarTitle {
@@ -305,10 +306,12 @@ input {
 	position: fixed;
 	left: 300px;
 	top: calc(95% + 5px);
+	cursor: pointer;
 }
 
 #ArrowRight {
 	position: fixed;
 	left: 1290px;
 	top: calc(95% + 5px);
+	cursor: pointer;
 }
