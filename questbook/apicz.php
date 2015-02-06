@@ -82,7 +82,7 @@
 			<span style="font-size: 13px;">
 				Název parametru: GetUsers<br>
 				Hodnota: <br>
-				Návratová hodnota: Seznam uživatelů oddělený čárkami<br>
+				Návratová hodnota: Seznam uživatelů oddělený středníky<br>
 			</span>
 			<br>
 			<i style="color: #374451;">Score uživatele</i><br>
@@ -96,14 +96,14 @@
 			<span style="font-size: 13px;">
 				Název parametru: GetUserQuests<br>
 				Hodnota: Uživatelské-jméno<br>
-				Návratová hodnota: Seznam úkolů daného uživatele oddělený čárkami<br>
+				Návratová hodnota: Seznam názvů úkolů daného uživatele oddělený středníky<br>
 			</span>
 			<br>
 			<i style="color: #374451;">Detailní úkoly uživatele</i><br>
 			<span style="font-size: 13px;">
 				Název parametru: GetUserQuestsDetailed<br>
 				Hodnota: Uživatelské-jméno<br>
-				Návratová hodnota: Seznam detailních informací o úkolech daného uživatele, jednotilvé úkoly jsou odděleny pomocí znaku '|', jednotlivé parametry jsou odděleny čátkami<br>
+				Návratová hodnota: Seznam detailních informací o úkolech daného uživatele, jednotilvé úkoly jsou odděleny středníky, jednotlivé parametry jsou odděleny čátkami<br>
 			</span>
 			<br>
 			<i style="color: #374451;">Body za úkol</i><br>
@@ -121,7 +121,7 @@
 				Hodnota: Jméno-úkolu<br>
 				Název parametru: UserName<br>
 				Hodnota: Uživatelské-jméno<br>
-				Návratová hodnota: Třída daného úkolu, pokud daný úkol nemá třídu tento požadavek vrátí 'none'<br>
+				Návratová hodnota: Třída daného úkolu, pokud daný úkol nemá třídu tento požadavek vrátí hodnotu none<br>
 			</span>
 			<br>
 			<i style="color: #374451;">Obrázek úkolu</i><br>

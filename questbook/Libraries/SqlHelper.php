@@ -63,7 +63,7 @@
 	}
 	
 	function SqlGetUserQuests($UserId) {
-		return AsciiCheck(SqlPassQuery("SELECT Name FROM QuestLog WHERE OwnerID = " . $UserId, false));
+		return AsciiCheck(SqlPassQuery("SELECT Name FROM QuestLog WHERE OwnerID = " . $UserId . " ORDER BY `QuestLog`.`ID` DESC", false));
 	}
 	
 	function SqlGetUserScore($UserId) {
@@ -84,6 +84,6 @@
 	}
 	
 	function SqlGetUserQuestsDetailed($UserId) {
-		return AsciiCheck(SqlPassQuery("SELECT Name,ImageUrl,Rank,Points FROM QuestLog WHERE OwnerID = " . $UserId, true));
+		return AsciiCheck(SqlPassQuery("SELECT Name,ImageUrl,Rank,Points FROM QuestLog WHERE OwnerID = " . $UserId . " ORDER BY `QuestLog`.`ID` DESC", true));
 	}
 ?>

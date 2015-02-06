@@ -111,7 +111,6 @@
 		<img src="Pictures/ArrowRight.png" id="ArrowRight">
 		
 		<div id="BarSideRight">
-		
 		</div>
 
 	</body>

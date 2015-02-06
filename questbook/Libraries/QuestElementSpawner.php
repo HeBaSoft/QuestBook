@@ -9,7 +9,7 @@
 		echo 		"<p class='BarPlayerInfoName'>" . $playerName ."</p> <br>";
 		echo 		"<p class='BarPlayerInfoQuests'>? quests completed</p>";
 		echo 	"</div>";
-		echo 	"<div class='BarPlayerScore'>" . "?" ."</div>";
+		echo 	"<div class='BarPlayerScore'>" . "?" . "</div>";
 		echo    "<div class='BarPlayerQuestScrollUp'>Up</div>";
 	}
 	
