@@ -1,51 +1,40 @@
 <?php
-	//QuestBook Dynamic Quest Reader
-	//Generates HTML elements by reading Files/QuestLog.txt file
+	function alert($msg) {
+        echo '<script type="text/javascript">alert("' . $msg . '"); </script>';
+    }
 
-	$playerCount = 0;
-	$file = fopen("Files/QuestLog.txt", "r");
-	while(!feof($file)){
-		$line = fgets($file);
-		if(substr($line, 0, 7) == "player{"){
-			$playerCount++;
-			echo "<div class='BarPlayer' style='left: " . ($playerCount * 330) . "px;'>";
-		}					
-		else if(substr($line, 0, 5) == "name=") {
-			$player = substr($line, 5);
-			echo    "<p id='BarPlayerScrollCounter'>0</p>";
-			echo 	"<div class='BarPlayerInfo'>";
-			echo 		"<p class='BarPlayerInfoName'>" . $player ."</p> <br>";
-			echo 		"<p class='BarPlayerInfoQuests'>? quests completed</p>";
-			echo 	"</div>";
-			echo 	"<div class='BarPlayerScore'>" . "?" ."</div>";
-			echo    "<div class='BarPlayerQuestScrollUp'>Up</div>";
+	//QuestBook Dynamic Quest Reader
+	//Generates HTML elements by SQL database
+	
+	//HTML Element Spawner
+	include ("Libraries/QuestElementSpawner.php"); 
+	
+	//SQL Helper
+	include ("Libraries/SqlHelper.php"); 
+	
+	//SQL Create connection
+	$conn = SqlConnect();
+
+	//SQL Check connection
+	if (!$conn) {
+		alert("Connection to MySQL database failed: " . mysqli_connect_error());
+	} else {
+		//SQL Reads Account table
+		$resultAcc = mysqli_query($conn, "SELECT ID, Username FROM Accounts");
+		if (mysqli_num_rows($resultAcc) > 0) {
+			while($dataAcc = mysqli_fetch_assoc($resultAcc)) {
+				AddElementPlayerBarBegin($dataAcc["ID"], $dataAcc["Username"]);
+					//SQL Reads users quests
+					$resultQuests = mysqli_query($conn, "SELECT ID, Name, ImageUrl, Rank, Points FROM QuestLog WHERE OwnerID = " . $dataAcc["ID"]);
+					if (mysqli_num_rows($resultQuests) > 0) {
+						while($dataQuest = mysqli_fetch_assoc($resultQuests)) {
+							AddElementQuest($dataQuest["Name"], $dataQuest["ImageUrl"], $dataQuest["Points"], $dataQuest["Rank"]);
+						}
+					}
+				AddElementPlayerBarEnd();
+			}
 		}
-		else if(substr($line, 0, 6) == "quest{") {
-			echo 	"<div class='BarPlayerQuest'>";
-		}
-		else if(substr($line, 0, 6) == "title=") {
-			$title = substr($line, 6);
-			echo 		"<p class='BarPlayerQuestTitle'>" . $title . "</p>";
-		}
-		else if(substr($line, 0, 4) == "img=") {
-			$img = substr($line, 4);
-			echo 		"<img class='ImgQuest' src='Pictures/" . $img . "'>";
-		}
-		else if(substr($line, 0, 6) == "score=") {
-			$score = substr($line, 6, -2);
-			echo 		"<p class='BarPlayerQuestScore'>" . $score . "p</p>";
-		}
-		else if(substr($line, 0, 5) == "rank=" && substr($line, 0, 9) != "rank=none") {
-			$rank = substr($line, 5, -2);
-			echo 		"<p class='BarPlayerQuestRank'>" . $rank . " Rank</p>";
-		}
-		else if(substr($line, 0, 2) == "};") {
-			echo    "<div class='BarPlayerQuestScrollDown'>Down</div>";
-			echo "</div>";
-		}
-		else if(substr($line, 0, 1) == "}") {
-			echo "</div>";
-		}
-	}						
-	fclose($file);
+		
+		mysqli_close($conn); 
+	}
 ?> 

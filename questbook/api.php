@@ -33,7 +33,7 @@
 	<body>
 		<div id="BarSideLeft">
 			<div class="BarTextVersion" style="margin-top: 5px; margin-bottom: 5px;">
-				Gateway, Version: 0.2, Last update: 1.12.2014
+				Gateway, Version: 0.3, Last update: 6.2.2015
 			</div>
 			<div id="BarTitle">
 				<img id="ImgLogoQuestBook" src="Pictures/QuestBook.png" >
@@ -83,7 +83,7 @@
 			<span style="font-size: 13px;">
 				Parameter name: GetUsers<br>
 				Value: <br>
-				Returns: List of users separated by commas<br>
+				Returns: List of users separated by semicolons<br>
 			</span>
 			<br>
 			<i style="color: #374451;">User score</i><br>
@@ -97,14 +97,14 @@
 			<span style="font-size: 13px;">
 				Parameter name: GetUserQuests<br>
 				Value: User-name<br>
-				Returns: List of quests that belongs to specified user, this list is separated by commas<br>
+				Returns: List of quests that belongs to specified user, this list is separated by semicolons<br>
 			</span>
 			<br>
 			<i style="color: #374451;">User quests detailed</i><br>
 			<span style="font-size: 13px;">
 				Parameter name: GetUserQuestsDetailed<br>
 				Value: User-name<br>
-				Returns: List of detailed information about quests that belongs to specified user, quests are separated by '|' and parameters by commas<br>
+				Returns: List of detailed information about quests that belongs to specified user, quests are separated by semicolons and parameters by commas<br>
 			</span>
 			<br>
 			<i style="color: #374451;">Quest score</i><br>
@@ -122,7 +122,7 @@
 				Value: Quest-name<br>
 				Parameter name: UserName<br>
 				Value: User-name<br>
-				Returns: Rank that given quest have, if given quest do not have rank this returns 'none'<br>
+				Returns: Rank that given quest have, if given quest do not have rank this returns none<br>
 			</span>
 			<br>
 			<i style="color: #374451;">Quest image</i><br>
@@ -131,7 +131,7 @@
 				Value: Quest-name<br>
 				Parameter name: UserName<br>
 				Value: User-name<br>
-				Returns: URL of image that belongs to given quest <br>
+				Returns: URL of image that belongs to given quest<br>
 			</span>
 			<br>
 			

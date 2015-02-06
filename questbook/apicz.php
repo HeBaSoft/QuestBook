@@ -33,7 +33,7 @@
 	<body>
 		<div id="BarSideLeft">
 			<div class="BarTextVersion" style="margin-top: 5px; margin-bottom: 5px;">
-				Gateway, Version: 0.2, Last update: 1.12.2014
+				Gateway, Version: 0.3, Last update: 6.2.2015
 			</div>
 			<div id="BarTitle">
 				<img id="ImgLogoQuestBook" src="Pictures/QuestBook.png" >

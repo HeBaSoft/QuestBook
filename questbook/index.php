@@ -72,7 +72,7 @@
 		<div id="BarSideLeft">
 			<a href="https://twitter.com/TheQuestBook" target="_blank" ><img src="Pictures/ButtonTwitter.png" id="ButtonTwitter"></a>
 			<div class="BarTextVersion" style="margin-top: 5px; margin-bottom: 5px;">
-				QuestBook, Version: 0.5b, Last update: 20.1.2015
+				QuestBook, Version: 0.6, Last update: 5.2.2015
 			</div>
 			
 			<div id="BarTitle">

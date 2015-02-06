@@ -93,7 +93,7 @@ input {
 	text-align: center;
 	font-size: 30px;
 	color: #ffcc00;
-	cursor:pointer;
+	cursor: default;
 	
 	-webkit-touch-callout: none;
     -webkit-user-select: none;
