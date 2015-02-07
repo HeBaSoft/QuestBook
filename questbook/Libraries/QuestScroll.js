@@ -1,13 +1,22 @@
 //QuestBook QuestScroll for index.php
 //OnDocumentReady
 $(document).ready(function() {
+	//Hides Arrow Buttons when needed
+	if($(".BarPlayer").size() <= 3) {
+		$("#ArrowRight").hide();
+	}
+	$("#ArrowLeft").hide();	
+
 	//Player scroll function
 	$("#ArrowRight").click(function() {
-		if($('.BarPlayer').is(':animated') == false && scroll <= ($('.BarPlayer').length - 4)){
+		if($('.BarPlayer').is(':animated') == false && scroll < ($('.BarPlayer').size() - 3)){
 			$(".BarPlayer").stop().animate({
 				left: '-=330px'
 			},250);
+			
 			scroll++;
+			if(scroll >= ($('.BarPlayer').size() - 3)) { $(this).hide(); }
+			$("#ArrowLeft").show();	
 		}
 	});
 	
@@ -16,7 +25,10 @@ $(document).ready(function() {
 			$(".BarPlayer").stop().animate({
 				left: '+=330px'
 			},250);
+			
 			scroll--;
+			if(scroll <= 0) { $(this).hide(); }
+			$("#ArrowRight").show();
 		}
 	});
 	

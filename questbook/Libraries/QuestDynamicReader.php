@@ -20,12 +20,12 @@
 		alert("Connection to MySQL database failed: " . mysqli_connect_error());
 	} else {
 		//SQL Reads Account table
-		$resultAcc = mysqli_query($conn, "SELECT ID, Username FROM Accounts");
+		$resultAcc = mysqli_query($conn, "SELECT ID,Username FROM Accounts");
 		if (mysqli_num_rows($resultAcc) > 0) {
 			while($dataAcc = mysqli_fetch_assoc($resultAcc)) {
 				AddElementPlayerBarBegin($dataAcc["ID"], $dataAcc["Username"]);
 					//SQL Reads users quests
-					$resultQuests = mysqli_query($conn, "SELECT ID, Name, ImageUrl, Rank, Points FROM QuestLog WHERE OwnerID = " . $dataAcc["ID"] . " ORDER BY `QuestLog`.`ID` DESC");
+					$resultQuests = mysqli_query($conn, "SELECT ID,Name,ImageUrl,Rank,Points FROM QuestLog WHERE OwnerID = " . $dataAcc["ID"] . " ORDER BY `QuestLog`.`ID` DESC");
 					if (mysqli_num_rows($resultQuests) > 0) {
 						while($dataQuest = mysqli_fetch_assoc($resultQuests)) {
 							AddElementQuest($dataQuest["Name"], $dataQuest["ImageUrl"], $dataQuest["Points"], $dataQuest["Rank"]);
