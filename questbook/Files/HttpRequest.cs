@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace QuestBookGateway {
 
-    class HttpRequest {
+    static class HttpRequest {
 
         public static string GetPost(string Url, params string[] postdata) {
             string result = string.Empty;
