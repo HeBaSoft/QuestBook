@@ -1,0 +1,116 @@
+html{
+	overflow-x: hidden;
+	overflow-y: hidden;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	background-color: #2D2D2B;
+}
+
+a {
+	color: #827F76;
+}
+
+#ButtonGitHub {
+	position: absolute;
+	left: 10px;
+	top: 10px;
+	width: 32px;
+	height: 32px;
+}
+
+#GlobalWrapper {
+	width: 100%;
+	height: 100%;
+}
+
+#TextWrapper {
+	position: relative;
+	top: calc(50% - 130px);
+	width: 100%;
+	height: 260px;
+	background-color: #444440;
+	cursor: default;
+}
+
+#Title {
+	position: relative;
+	top: calc(50% - 112px);
+	text-align: center;
+	font-family: FontTitle;
+	font-size: 32px;
+	color: #ffcc00;
+	-webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#SubTitle {
+	position: relative;
+	top: calc(50% - 118px);
+	text-align: center;
+	font-family: BarText;
+	font-size: 15px;
+	color: #ffcc00;
+	-webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#Text{
+	position: relative;
+	top: calc(50% - 96px);
+	text-align: center;
+	font-family: BarText;
+	font-size: 16px;
+	color: #70706B;
+}
+
+#HiddenText { 
+	position: relative;
+	top: calc(50% - 88px);
+	text-align: center;
+	font-family: BarText;
+	font-size: 10px;
+	color: #444440;
+}
+
+#HiddenUrl {
+	color: #444440;
+}
+
+#DownArrow{
+	position: relative;
+	top: calc(50% - 30px);
+	left: calc(50% - 64px);
+	cursor: pointer;
+}
+
+#TwitterWrapper {
+	position: absolute;
+	top: calc(50% - 150px + 70%);	
+	left: calc(50% - 375px);
+	width: 100%;
+}
+
+a.twitter-timeline {
+  display: inline-block;
+  padding: 6px 12px 6px 30px;
+  margin: 10px 0;
+  border: #ccc solid 1px;
+  border-radius: 3px;
+  background: #f8f8f8 url(//platform.twitter.com/images/bird.png) 8px 8px no-repeat;
+  
+  font: normal 12px/18px Helvetica, Arial, sans-serif;
+  color: #333;
+  white-space: nowrap;
+}

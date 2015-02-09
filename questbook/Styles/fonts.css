@@ -12,8 +12,3 @@
     font-family: ScoreText;
     src: url(../Fonts/pressstyle.ttf);
 }
-
-@font-face {
-    font-family: APIText;
-    src: url(../Fonts/chintzy.ttf);
-}

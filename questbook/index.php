@@ -2,6 +2,10 @@
 	<head>
 		<meta charset="UTF-8">
 		
+		<script>
+			window.location = "communityupdate.php";
+		</script>
+		
 		<!--JavaScript Global Variables-->
 		<script>
 			var scroll = 0;
@@ -73,7 +77,7 @@
 			<a href="https://twitter.com/TheQuestBook" target="_blank" ><img src="Pictures/ButtonTwitter.png" id="ButtonTwitter"></a>
 			<a href="https://github.com/HeBaSoft/QuestBook" target="_blank" ><img src="Pictures/ButtonGitHub.png" id="ButtonGitHub"></a>
 			<div class="BarTextVersion" style="margin-top: 5px; margin-bottom: 5px;">
-				QuestBook, Version: 0.6, Last update: 5.2.2015
+				QuestBook, Version: 0.6b, Last update: 7.2.2015
 			</div>
 			
 			<div id="BarTitle">
