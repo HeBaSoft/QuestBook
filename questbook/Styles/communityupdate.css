@@ -14,14 +14,6 @@ a {
 	color: #827F76;
 }
 
-#ButtonGitHub {
-	position: absolute;
-	left: 10px;
-	top: 10px;
-	width: 32px;
-	height: 32px;
-}
-
 #GlobalWrapper {
 	width: 100%;
 	height: 100%;
@@ -31,7 +23,7 @@ a {
 	position: relative;
 	top: calc(50% - 130px);
 	width: 100%;
-	height: 260px;
+	height: 272px;
 	background-color: #444440;
 	cursor: default;
 }
@@ -90,15 +82,15 @@ a {
 
 #DownArrow{
 	position: relative;
-	top: calc(50% - 30px);
+	top: 25%;
 	left: calc(50% - 64px);
 	cursor: pointer;
 }
 
 #TwitterWrapper {
 	position: absolute;
-	top: calc(50% - 150px + 70%);	
-	left: calc(50% - 375px);
+	top: calc(50% - 150px + 1000px);	
+	left: calc(50% - 400px);
 	width: 100%;
 }
 
