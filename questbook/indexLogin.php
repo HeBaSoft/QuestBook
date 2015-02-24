@@ -77,42 +77,31 @@
 					}
 				});
 				
-				//Login
-				$("#ButtonLogin").click(function(){
-					if($("#ButtonLogin").attr("src") == "Pictures/ButtonLogin.png") {
-						$("#ButtonLogin").attr("src", "Pictures/ButtonLogout.png");
-						$("#LoginPasswordInput").css("display", "none");
-						$("#LoginUserInput").css("display", "none");
-						$("#LoggedUser").css("display", "initial");
-					} else {
-						$("#ButtonLogin").attr("src", "Pictures/ButtonLogin.png");
-						$("#LoggedUser").css("display", "none");
-						$("#LoginPasswordInput").css("display", "initial");
-						$("#LoginUserInput").css("display", "initial");
-					}
-				});
-				
 			}); 
 		</script>
 	</head>
 	<body>
 		<div id="BarSideLeft">
-			<!--<a href="https://twitter.com/TheQuestBook"><img src="Pictures/ButtonTwitter.png" id="ButtonTwitter"></a>
-			-->
 			<div class="BarTextVersion" style="margin-top: 5px; margin-bottom: 5px;">
 				Zde mají být informace o verzi, toto je Beta, jsem líný ...
 			</div>
 			
 			<div id="BarLogin">
-				<img src="Pictures/ButtonLogin.png" id="ButtonLogin" style="width: 32px; height:32px; margin: 5px; float: left; cursor: pointer;">
-				<input type="text" id="LoginUserInput" class="InputLogin" placeholder="Username" name="usr">
-				<input type="password" id="LoginPasswordInput" class="InputLogin" placeholder="Password" name="pass">
-				<span class="ObjCenter" id="LoggedUser" style="display: none;">Filip Šikula</span>
+					<input type="text" id="LoginUserInput" class="InputLogin" placeholder="Username" name="usr">
+					<input type="password" id="LoginPasswordInput" class="InputLogin" placeholder="Password" name="pass">
+			
+					<div type="button" value="Login" id="ButtonLogin">Login</div>
+					<div type="button" value="Register" id="ButtonRegister">Register</div>
+					
+					<span class="ObjCenter" id="LoggedUser" style="display: none;">user</span>
 			</div>
 			
 			<div id="BarTitle">
 				<img src="Pictures/ButtonArrowDown.png" id="ButtonShowLogin">
-				<img src="Pictures/QuestBook.png" class="ObjCenter">
+				<a href="https://twitter.com/TheQuestBook" target="_blank"><img src="Pictures/ButtonTwitter.png" id="ButtonTwitter"></a>
+				<a href="https://github.com/HeBaSoft/QuestBook" target="_blank"><img src="Pictures/ButtonGitHub.png" id="ButtonGitHub"></a>
+				
+				<img src="Pictures/QuestBook.png" class="ObjCenter" id="QuestBookLogo">
 				<div id="Title">QuestBook</div>
 				<br>
 			</div>
